@@ -23,8 +23,8 @@ public class ObjectPool<T> where T : MonoBehaviour
     {
         var objectToReturn = AcquireObject();
         return objectToReturn;
-    }    
-    
+    }
+
     public T Get(Action<T> initializationAction)
     {
         var objectToReturn = AcquireObject();
