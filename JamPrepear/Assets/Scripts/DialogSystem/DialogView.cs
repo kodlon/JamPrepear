@@ -15,6 +15,7 @@ namespace DialogSystem
         
         [SerializeField] private Sprite _standardCharacterIcon;
         [SerializeField] private Image _hintIcon;
+        [SerializeField] private EventController _eventController;
     
         private List<DialogSO> _dialogList;
         
@@ -29,6 +30,7 @@ namespace DialogSystem
             _characterNameText.text = _dialogList[_dialogIndex].characterName;
             _dialogText.text = _dialogList[_dialogIndex].dialogText;
             _characterSpriteRenderer.sprite = _dialogList[_dialogIndex].characterSprite;
+            _eventController.HandleEvent(_dialogList[_dialogIndex].specialEvent);
             
             _dialogButton.interactable = true;
             _hintIcon.gameObject.SetActive(true);
@@ -58,6 +60,7 @@ namespace DialogSystem
             _characterNameText.text = _dialogList[_dialogIndex].characterName;
             _dialogText.text = _dialogList[_dialogIndex].dialogText;
             _characterSpriteRenderer.sprite = _dialogList[_dialogIndex].characterSprite;
+            _eventController.HandleEvent(_dialogList[_dialogIndex].specialEvent);
         }
 
         private void EndDialogAfterAction()

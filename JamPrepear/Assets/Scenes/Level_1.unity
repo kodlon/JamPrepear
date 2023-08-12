@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258729193}
   - component: {fileID: 258729194}
+  - component: {fileID: 258729195}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -172,6 +173,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogView: {fileID: 1624954221}
+  _playerController: {fileID: 7957058128267773205}
+--- !u!114 &258729195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258729192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b97c2ab5acff174c94ae55b3f21088c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _playerController: {fileID: 7957058128267773205}
 --- !u!1 &263342172
 GameObject:
@@ -1716,6 +1730,7 @@ MonoBehaviour:
   _dialogButton: {fileID: 1624954222}
   _standardCharacterIcon: {fileID: 21300000, guid: 935bb8b5e4f7d484fb27e345f3615b65, type: 3}
   _hintIcon: {fileID: 2133524242}
+  _eventController: {fileID: 258729195}
 --- !u!114 &1624954222
 MonoBehaviour:
   m_ObjectHideFlags: 0

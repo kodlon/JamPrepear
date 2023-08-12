@@ -10,5 +10,6 @@ namespace DialogSystem
         public string dialogText;
     
         public Sprite characterSprite;
+        public SpecialEventsEnum specialEvent;
     }
 }

@@ -30,6 +30,7 @@ namespace Entities.Player
         private Coroutine _attackCoroutine;
         
         private bool _isActionAllowed = true;
+        public bool IsWeaponReceived { get; set; } //Problem here, we need to save this value between scenes
 
         public void TakeDamage(int amount)
         {
@@ -89,7 +90,7 @@ namespace Entities.Player
 
         private void Attack()
         {
-            if (!Input.GetMouseButtonDown(0)) 
+            if (!IsWeaponReceived || !Input.GetMouseButtonDown(0)) 
                 return;
             
             if (_attackCoroutine != null)
