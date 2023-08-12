@@ -3,17 +3,18 @@ using UnityEngine.AI;
 
 namespace Entities.Enemies
 {
-    public class ChasingEnemy : EnemyBase
+    public class BowEnemy : EnemyBase
     {
         [SerializeField] private Transform _target;
         [SerializeField] private float _rotationSpeed = 5.0f;
         [SerializeField] private float _attackRange = 5.0f;
         [SerializeField] private Transform firePoint;
-        [SerializeField] private float attackDuration = 10f; // Швидкість проектайлу
+        [SerializeField] private float projectileSpeed = 10f; // Швидкість проектайлу
         [SerializeField] private float attackCooldown = 0.5f; // Перерва між атаками
-        
+
         private float nextAttackTime = 0f; // Час наступної атаки
-        private NavMeshAgent _navMeshAgent;    
+        private NavMeshAgent _navMeshAgent;
+        public GameObject arrowPrefab; // Префаб проектайлу    
         
 
 
@@ -30,10 +31,13 @@ namespace Entities.Enemies
 
             RotateTowardsPlayer();
 
-            if (Vector3.Distance(_target.position, transform.position) <= _attackRange && Time.time >= nextAttackTime)
+            if (Vector3.Distance(_target.position, transform.position) <= _attackRange)
             {
-                Attack();
-                nextAttackTime = Time.time + attackCooldown;
+                if (Time.time >= nextAttackTime)
+                {
+                    Attack();
+                    nextAttackTime = Time.time + attackCooldown;
+                }
                 _navMeshAgent.isStopped = true;
             }
             else
@@ -53,6 +57,13 @@ namespace Entities.Enemies
         private void Attack()
         {
             Debug.Log("Атака");
+            GameObject newProjectile = Instantiate(arrowPrefab, firePoint.position, Quaternion.Euler(0f, 0f, firePoint.rotation.eulerAngles.z - 90f));
+
+            // Отримати компонент Rigidbody2D проектайлу
+            Rigidbody2D rb = newProjectile.GetComponent<Rigidbody2D>();
+
+            // Застосувати силу для руху проектайлу
+            rb.velocity = firePoint.right * projectileSpeed;
         }
     }
 }
