@@ -1235,6 +1235,10 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 7957058128267773204}
+    - target: {fileID: 7582079565696749255, guid: 3095e7c837769494d927ff0533fb1ce8, type: 3}
+      propertyPath: _attackRange
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2050,18 +2054,9 @@ MonoBehaviour:
   _dialogText: {fileID: 895197634}
   _characterSpriteRenderer: {fileID: 981879657}
   _dialogButton: {fileID: 1624954222}
-  _dialogList:
-  - {fileID: 11400000, guid: e638f5fc005bc6c41a1992fa49317b27, type: 2}
-  - {fileID: 11400000, guid: a04fd7ceed690be4297fa81a77e1cf61, type: 2}
-  - {fileID: 11400000, guid: 698e5d288d777c941a7a69195a8372c0, type: 2}
-  - {fileID: 11400000, guid: a3c75e94bbfc04f4ab2b08cecdfe7cc2, type: 2}
-  - {fileID: 11400000, guid: a5fcac6645a1e2c488ca69c7edc89ef8, type: 2}
-  - {fileID: 11400000, guid: 7ff0d8b437640b94d8f12b77baeaf55e, type: 2}
-  - {fileID: 11400000, guid: b45da9ae705d2964daf3b93a7a492a77, type: 2}
-  - {fileID: 11400000, guid: 3dc69fccb6156aa4298f80f0ae6b554c, type: 2}
-  - {fileID: 11400000, guid: 3c844da71d2133d44be3f95452ab7ce6, type: 2}
-  - {fileID: 11400000, guid: 85719593352ea2f4e9037a74f7f467df, type: 2}
-  - {fileID: 11400000, guid: 0858e5ed819306f4e9e673aa33803020, type: 2}
+  _standardCharacterIcon: {fileID: 0}
+  _hintIcon: {fileID: 0}
+  _eventController: {fileID: 0}
 --- !u!114 &1624954222
 MonoBehaviour:
   m_ObjectHideFlags: 0

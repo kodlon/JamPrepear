@@ -13,7 +13,8 @@ namespace Entities.Player
         
         [SerializeField] private Collider2D _swordCollider;
         [SerializeField] private float _attackDuration = 0.1f;
-        
+        [SerializeField] private bool _isWeaponReceived;
+
         [SerializeField] private int _healthPoints = 3;
         
         [SerializeField] private Animator _animator;
@@ -33,7 +34,6 @@ namespace Entities.Player
         
         private bool _isActionAllowed = true;
         
-        private bool _isWeaponReceived;
         public bool IsWeaponReceived
         {
             get => _isWeaponReceived;
