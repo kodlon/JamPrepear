@@ -1,5 +1,5 @@
-﻿using DialogSystem;
-using Entities.Player;
+﻿using Entities.Player;
+using UI.DialogSystem;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour

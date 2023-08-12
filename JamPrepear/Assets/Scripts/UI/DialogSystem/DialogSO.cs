@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DialogSystem
+namespace UI.DialogSystem
 {
     [CreateAssetMenu(fileName = "Dialog", menuName = "Create/Dialog", order = 0)]
     public class DialogSO : ScriptableObject

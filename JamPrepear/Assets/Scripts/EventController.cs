@@ -15,6 +15,14 @@ public class EventController : MonoBehaviour
                 break;
             case SpecialEventsEnum.None:
                 break;
+            case SpecialEventsEnum.FirstWave:
+                break;
+            case SpecialEventsEnum.SecondWave:
+                break;
+            case SpecialEventsEnum.ThirdWave:
+                break;
+            case SpecialEventsEnum.BossWave:
+                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(specialEvent), specialEvent, null);
         }

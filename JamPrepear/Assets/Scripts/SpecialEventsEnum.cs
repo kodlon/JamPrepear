@@ -2,4 +2,8 @@
 {
     None,
     ReceiveWeapon,
+    FirstWave,
+    SecondWave,
+    ThirdWave,
+    BossWave
 }

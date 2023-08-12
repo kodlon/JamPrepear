@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Entities.Player;
 using UnityEngine;
 
-namespace DialogSystem
+namespace UI.DialogSystem
 {
     [RequireComponent(typeof(Collider2D))]
     public class DialogAction : MonoBehaviour

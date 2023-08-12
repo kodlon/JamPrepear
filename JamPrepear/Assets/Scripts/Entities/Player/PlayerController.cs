@@ -16,10 +16,19 @@ namespace Entities.Player
         [SerializeField] private Collider2D _swordCollider;
         [SerializeField] private Animator _animator;
         
+        public event Action<int> OnHealthChanged;
+
         public int Health
         {
             get => _healthPoints;
-            set => _healthPoints = Mathf.Clamp(value, 0, int.MaxValue);
+            set
+            {
+                if (_healthPoints != value)
+                {
+                    _healthPoints = Mathf.Clamp(value, 0, int.MaxValue);
+                    OnHealthChanged?.Invoke(_healthPoints);
+                }
+            }
         }
         
         public event Action OnPlayerDeath;
@@ -49,9 +58,9 @@ namespace Entities.Player
 
         public void TakeDamage(int amount)
         {
-            _healthPoints -= amount;
+            Health -= amount;
 
-            if (_healthPoints <= 0)
+            if (Health <= 0)
                 OnPlayerDeath?.Invoke();
         }
         
@@ -59,6 +68,7 @@ namespace Entities.Player
         {
             _isActionAllowed = isAllowed;
             _rigidbody2D.velocity = Vector2.zero;
+            _rigidbody2D.rotation = _playerTransform.eulerAngles.z;
         }
 
         private void Start()
