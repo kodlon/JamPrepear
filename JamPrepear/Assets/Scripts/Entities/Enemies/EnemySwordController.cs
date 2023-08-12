@@ -14,4 +14,6 @@ namespace Entities.Enemies
             Debug.Log("Хуяк по їбалу: " + other.gameObject.name);
         }
     }
+
+
 }
