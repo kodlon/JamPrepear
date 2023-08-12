@@ -16,6 +16,8 @@ namespace Entities.Player
         
         [SerializeField] private int _healthPoints = 3;
         
+        [SerializeField] private Animator _animator;
+        
         public int Health
         {
             get => _healthPoints;
@@ -30,7 +32,22 @@ namespace Entities.Player
         private Coroutine _attackCoroutine;
         
         private bool _isActionAllowed = true;
-        public bool IsWeaponReceived { get; set; } //Problem here, we need to save this value between scenes
+        
+        private bool _isWeaponReceived;
+        public bool IsWeaponReceived
+        {
+            get => _isWeaponReceived;
+            set
+            {
+                _isWeaponReceived = value;
+
+                // Якщо значення true, активуємо анімацію атаки
+                if (_isWeaponReceived)
+                {
+                    _animator.SetBool("IsWeaponReceived", true);
+                }
+            }
+        } //Problem here, we need to save this value between scenes
 
         public void TakeDamage(int amount)
         {
@@ -101,6 +118,7 @@ namespace Entities.Player
         
         private IEnumerator SwordAttack()
         {
+            _animator.SetTrigger("Attack");
             _swordCollider.gameObject.SetActive(true);
             _swordCollider.enabled = true;
             yield return new WaitForSeconds(_attackDuration);

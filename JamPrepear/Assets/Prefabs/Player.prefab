@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4734884130091998177}
   - component: {fileID: 963708516596469847}
+  - component: {fileID: 7095640377502582052}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7095640377502582052
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086497875178033668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2aa35a109ff3fe74fa33951a093bd12b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3679081671197303639
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +302,7 @@ MonoBehaviour:
   _swordCollider: {fileID: 674239839508821349}
   _attackDuration: 0.1
   _healthPoints: 3
+  _animator: {fileID: 7095640377502582052}
 --- !u!50 &5920681282558161738
 Rigidbody2D:
   serializedVersion: 4

@@ -75,8 +75,8 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
-    customPivotPosition: {x: 0.5, y: 0.5}
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.2915625}
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -87,15 +87,15 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
-    customPivotPosition: {x: 0.5, y: 0.5}
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.2915625}
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638274471465586839
+  platformSettingsDirtyTick: 638274478826964899
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: playerSwordAttack_Frame_0
     originalName: 
-    pivot: {x: 0.4, y: -0.4375}
+    pivot: {x: 0.4, y: 0.145625}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -141,7 +141,7 @@ ScriptedImporter:
     uvTransform: {x: 31, y: 29}
   - name: playerSwordAttack_Frame_1
     originalName: 
-    pivot: {x: 0.3809524, y: -0.4117647}
+    pivot: {x: 0.3809524, y: 0.13705882}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -161,7 +161,7 @@ ScriptedImporter:
     uvTransform: {x: 31, y: 4}
   - name: playerSwordAttack_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: -0.3888889}
+    pivot: {x: 0.5, y: 0.12944444}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -181,7 +181,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 57}
   - name: playerSwordAttack_Frame_4
     originalName: 
-    pivot: {x: 0.57894737, y: -0.3888889}
+    pivot: {x: 0.57894737, y: 0.12944444}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -201,7 +201,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 31}
   - name: playerSwordAttack_Frame_2
     originalName: 
-    pivot: {x: 0.42105263, y: -0.36842105}
+    pivot: {x: 0.42105263, y: 0.12263157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
