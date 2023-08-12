@@ -10,12 +10,10 @@ namespace Entities.Player
     {
         [SerializeField] private float _movingSpeed = 5.0f;
         [SerializeField] private float _rotationSpeed = 200.0f;
-        
-        [SerializeField] private Collider2D _swordCollider;
         [SerializeField] private float _attackDuration = 0.1f;
-        
         [SerializeField] private int _healthPoints = 3;
         
+        [SerializeField] private Collider2D _swordCollider;
         [SerializeField] private Animator _animator;
         
         public int Health
@@ -32,8 +30,8 @@ namespace Entities.Player
         private Coroutine _attackCoroutine;
         
         private bool _isActionAllowed = true;
-        
         private bool _isWeaponReceived;
+        
         public bool IsWeaponReceived
         {
             get => _isWeaponReceived;

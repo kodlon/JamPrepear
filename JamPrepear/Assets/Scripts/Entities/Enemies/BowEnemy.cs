@@ -3,15 +3,19 @@ using UnityEngine.AI;
 
 namespace Entities.Enemies
 {
-    public class ChasingEnemy : EnemyBase
+    public class BowEnemy : EnemyBase
     {
         [SerializeField] private Transform _target;
+        [SerializeField] private Transform firePoint;
+        [SerializeField] private ArrowController _arrowPrefab;
+        
         [SerializeField] private float _rotationSpeed = 5.0f;
         [SerializeField] private float _attackRange = 5.0f;
+        [SerializeField] private float projectileSpeed = 10f;
         [SerializeField] private float attackCooldown = 0.5f;
 
-        private float _nextAttackTime;
-        private NavMeshAgent _navMeshAgent;    
+        private NavMeshAgent _navMeshAgent;
+        private float _nextAttackTime; 
         
         private void Awake()
         {
@@ -26,10 +30,13 @@ namespace Entities.Enemies
 
             RotateTowardsPlayer();
 
-            if (Vector3.Distance(_target.position, transform.position) <= _attackRange && Time.time >= _nextAttackTime)
+            if (Vector3.Distance(_target.position, transform.position) <= _attackRange)
             {
-                Attack();
-                _nextAttackTime = Time.time + attackCooldown;
+                if (Time.time >= _nextAttackTime)
+                {
+                    Attack();
+                    _nextAttackTime = Time.time + attackCooldown;
+                }
                 _navMeshAgent.isStopped = true;
             }
             else
@@ -49,7 +56,10 @@ namespace Entities.Enemies
         
         private void Attack()
         {
-            Debug.Log($"Attack {name}");
+            var newProjectile = Instantiate(_arrowPrefab, firePoint.position, Quaternion.Euler(0f, 0f, firePoint.rotation.eulerAngles.z - 90f));
+            var rb = newProjectile.GetComponent<Rigidbody2D>();
+            
+            rb.velocity = firePoint.right * projectileSpeed;
         }
     }
 }
