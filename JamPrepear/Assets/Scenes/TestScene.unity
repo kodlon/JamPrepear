@@ -2267,6 +2267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 258729193}
     m_Modifications:
+    - target: {fileID: 165245669351467505, guid: c6449769a21ad42449c0cdace78707c5, type: 3}
+      propertyPath: _isWeaponReceived
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2709785695767141160, guid: c6449769a21ad42449c0cdace78707c5, type: 3}
       propertyPath: m_RootOrder
       value: -1
