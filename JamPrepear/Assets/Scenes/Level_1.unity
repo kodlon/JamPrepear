@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -554,12 +555,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e184631dfbae994ead76b57727d6fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shakeAmount: 0.1
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +574,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7957058128267773204}
   _cameraFollowSpeed: 0.125
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afbfc9a2426186458269e8ce61f4796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraFollowTarget: {fileID: 519420035}
+  _cameraShake: {fileID: 519420034}
 --- !u!1 &601409431
 GameObject:
   m_ObjectHideFlags: 0
