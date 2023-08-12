@@ -8,15 +8,11 @@ namespace Entities.Enemies
         [SerializeField] private Transform _target;
         [SerializeField] private float _rotationSpeed = 5.0f;
         [SerializeField] private float _attackRange = 5.0f;
-        [SerializeField] private Transform firePoint;
-        [SerializeField] private float attackDuration = 10f; // Швидкість проектайлу
-        [SerializeField] private float attackCooldown = 0.5f; // Перерва між атаками
-        
-        private float nextAttackTime = 0f; // Час наступної атаки
+        [SerializeField] private float attackCooldown = 0.5f;
+
+        private float _nextAttackTime;
         private NavMeshAgent _navMeshAgent;    
         
-
-
         private void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -30,10 +26,10 @@ namespace Entities.Enemies
 
             RotateTowardsPlayer();
 
-            if (Vector3.Distance(_target.position, transform.position) <= _attackRange && Time.time >= nextAttackTime)
+            if (Vector3.Distance(_target.position, transform.position) <= _attackRange && Time.time >= _nextAttackTime)
             {
                 Attack();
-                nextAttackTime = Time.time + attackCooldown;
+                _nextAttackTime = Time.time + attackCooldown;
                 _navMeshAgent.isStopped = true;
             }
             else
@@ -50,9 +46,10 @@ namespace Entities.Enemies
             var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);
         }
+        
         private void Attack()
         {
-            Debug.Log("Атака");
+            Debug.Log($"Attack {name}");
         }
     }
 }
