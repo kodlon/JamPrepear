@@ -10,7 +10,6 @@ namespace Entities.Player
     {
         [SerializeField] private float _movingSpeed = 5.0f;
         [SerializeField] private float _rotationSpeed = 200.0f;
-        [SerializeField] private float _cameraFollowSpeed = 0.125f;
         
         [SerializeField] private Collider2D _swordCollider;
         [SerializeField] private float _attackDuration = 0.1f;
@@ -28,7 +27,7 @@ namespace Entities.Player
         private Rigidbody2D _rigidbody2D;
         private Camera _mainCamera;
         private Transform _playerTransform;
-        private Transform _mainCameraTransform;
+        private Coroutine _attackCoroutine;
         
         private bool _isActionAllowed = true;
 
@@ -51,7 +50,6 @@ namespace Entities.Player
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _mainCamera = Camera.main;
             _playerTransform = transform;
-            _mainCameraTransform = _mainCamera.transform;
         }
 
         private void FixedUpdate()
@@ -61,7 +59,6 @@ namespace Entities.Player
             
             Move();
             RotateTowardsMouse();
-            FollowCamera();
         }
 
         private void Update()
@@ -92,24 +89,22 @@ namespace Entities.Player
 
         private void Attack()
         {
-            if (Input.GetMouseButtonDown(0))
-                StartCoroutine(SwordAttack());
-        }
-
-        private void FollowCamera()
-        {
-            var desiredPosition = _playerTransform.position;
-            var position = _mainCameraTransform.position;
-            var smoothedPosition = Vector3.Lerp(position, desiredPosition, _cameraFollowSpeed);
-            position = new Vector3(smoothedPosition.x, smoothedPosition.y, position.z);
-            _mainCamera.transform.position = position;
+            if (!Input.GetMouseButtonDown(0)) 
+                return;
+            
+            if (_attackCoroutine != null)
+                StopCoroutine(_attackCoroutine);
+                
+            StartCoroutine(SwordAttack());
         }
         
         private IEnumerator SwordAttack()
         {
+            _swordCollider.gameObject.SetActive(true);
             _swordCollider.enabled = true;
             yield return new WaitForSeconds(_attackDuration);
             _swordCollider.enabled = false;
+            _swordCollider.gameObject.SetActive(false);
         }
     }
 }

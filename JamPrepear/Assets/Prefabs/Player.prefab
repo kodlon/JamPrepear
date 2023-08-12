@@ -102,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2330270237284345503
 Transform:
   m_ObjectHideFlags: 0
@@ -261,7 +261,7 @@ Transform:
   - {fileID: 4734884130091998177}
   - {fileID: 3429075484135140017}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &165245669351467505
 MonoBehaviour:
@@ -277,9 +277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movingSpeed: 5
   _rotationSpeed: 200
-  _cameraFollowSpeed: 0.125
   _swordCollider: {fileID: 674239839508821349}
   _attackDuration: 0.1
+  _healthPoints: 3
 --- !u!50 &5920681282558161738
 Rigidbody2D:
   serializedVersion: 4
