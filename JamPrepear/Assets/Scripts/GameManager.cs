@@ -11,19 +11,12 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 120;
         
-        _dialogView.OnDialogEnd += OnDialogEnd;
         _playerController.OnPlayerDeath += OnPlayerDeath;
     }
     
     private void OnDestroy()
     {
-        _dialogView.OnDialogEnd -= OnDialogEnd;
         _playerController.OnPlayerDeath -= OnPlayerDeath;
-    }
-
-    private void OnDialogEnd()
-    {
-        Debug.LogError("Dialog ended");
     }
     
     private void OnPlayerDeath()

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Entities.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerController : MonoBehaviour, IDamageable
+    public class PlayerController : MonoBehaviour, IDamageable, IActionControl
     {
         [SerializeField] private float _movingSpeed = 5.0f;
         [SerializeField] private float _rotationSpeed = 200.0f;
@@ -29,6 +29,8 @@ namespace Entities.Player
         private Camera _mainCamera;
         private Transform _playerTransform;
         private Transform _mainCameraTransform;
+        
+        private bool _isActionAllowed = true;
 
         public void TakeDamage(int amount)
         {
@@ -36,6 +38,12 @@ namespace Entities.Player
 
             if (_healthPoints <= 0)
                 OnPlayerDeath?.Invoke();
+        }
+        
+        public void SetActionAllowed(bool isAllowed)
+        {
+            _isActionAllowed = isAllowed;
+            _rigidbody2D.velocity = Vector2.zero;
         }
 
         private void Start()
@@ -48,6 +56,9 @@ namespace Entities.Player
 
         private void FixedUpdate()
         {
+            if (!_isActionAllowed)
+                return;
+            
             Move();
             RotateTowardsMouse();
             FollowCamera();
@@ -55,6 +66,9 @@ namespace Entities.Player
 
         private void Update()
         {
+            if (!_isActionAllowed)
+                return;
+            
             Attack();
         }
 
