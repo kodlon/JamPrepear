@@ -14,6 +14,7 @@ namespace DialogSystem
         [SerializeField] private Button _dialogButton;
         
         [SerializeField] private Sprite _standardCharacterIcon;
+        [SerializeField] private Image _hintIcon;
     
         private List<DialogSO> _dialogList;
         
@@ -30,17 +31,18 @@ namespace DialogSystem
             _characterSpriteRenderer.sprite = _dialogList[_dialogIndex].characterSprite;
             
             _dialogButton.interactable = true;
+            _hintIcon.gameObject.SetActive(true);
         }
 
         private void Start()
         {
             _dialogButton.onClick.AddListener(NextDialog);
-            _dialogButton.interactable = false;
         }
 
         private void OnDestroy()
         {
             _dialogButton.onClick.RemoveListener(NextDialog);
+            EndDialogAfterAction();
         }
 
         private void NextDialog()
@@ -49,19 +51,25 @@ namespace DialogSystem
 
             if (_dialogList.Count <= _dialogIndex)
             {
-                _dialogButton.interactable = false;
-                _characterNameText.text = "-";
-                _dialogText.text = "-";
-                _characterSpriteRenderer.sprite = _standardCharacterIcon;
-                _dialogIndex = 0;
-
-                OnDialogEnd?.Invoke();
+                EndDialogAfterAction();
                 return;
             }
         
             _characterNameText.text = _dialogList[_dialogIndex].characterName;
             _dialogText.text = _dialogList[_dialogIndex].dialogText;
             _characterSpriteRenderer.sprite = _dialogList[_dialogIndex].characterSprite;
+        }
+
+        private void EndDialogAfterAction()
+        {
+            _dialogButton.interactable = false;
+            _characterNameText.text = "-";
+            _dialogText.text = "-";
+            _characterSpriteRenderer.sprite = _standardCharacterIcon;
+            _dialogIndex = 0;
+            _hintIcon.gameObject.SetActive(false);
+
+            OnDialogEnd?.Invoke();
         }
     }
 }
