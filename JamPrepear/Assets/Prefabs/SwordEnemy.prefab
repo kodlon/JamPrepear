@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4734884130091998177}
   - component: {fileID: 963708516596469847}
-  - component: {fileID: 8753904114152585049}
+  - component: {fileID: 7990476422773171283}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086497875178033668}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.59, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c7159a9c0850934495834f328613d77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b67b79b0194c2044809a7771f3a6e4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8753904114152585049
+--- !u!95 &7990476422773171283
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 1086497875178033668}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5c3dc097e3b77354d87007547a6c1029, type: 2}
+  m_Controller: {fileID: 9100000, guid: e6b6c3d209bd8444fbf6b43597beb703, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2709785695767141160}
-  - component: {fileID: 5855046309419290367}
+  - component: {fileID: 120720071962025359}
   - component: {fileID: 6364110343589479847}
   - component: {fileID: 5920681282558161738}
   - component: {fileID: 9031405900779716236}
@@ -174,7 +174,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5855046309419290367
+--- !u!114 &120720071962025359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,17 +183,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6256233369825688230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f4d342426b6ac44a79f60f497e6c57, type: 3}
+  m_Script: {fileID: 11500000, guid: c3b9a29ff0cf8714fbe5fada8fc23252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
-  _target: {fileID: 0}
-  firePoint: {fileID: 2855013707694609262}
-  _arrowPrefab: {fileID: 8588478480394644390, guid: 4acc4d328358aa34496a00c9932ea40a, type: 3}
-  _rotationSpeed: 4
-  _attackRange: 8
-  projectileSpeed: 10
-  attackCooldown: 0.5
+  firePoint: {fileID: 0}
+  _arrowPrefab: {fileID: 0}
+  _animator: {fileID: 0}
+  _rotationSpeed: 5
+  _attackRange: 2
+  _projectileSpeed: 10
+  _attackCooldown: 0.5
 --- !u!195 &6364110343589479847
 NavMeshAgent:
   m_ObjectHideFlags: 0
