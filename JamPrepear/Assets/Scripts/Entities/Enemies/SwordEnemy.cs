@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 namespace Entities.Enemies
 {
@@ -15,13 +14,14 @@ namespace Entities.Enemies
         [SerializeField] private float _attackRange = 5.0f;
         [SerializeField] private float _projectileSpeed = 10f;
         [SerializeField] private float _attackCooldown = 0.5f;
+        [SerializeField] private float _beforeAttackDuration = 0.0f;
         
         private NavMeshAgent _navMeshAgent;
         private Coroutine _attackCoroutine;
 
         private float _nextAttackTime; 
         private bool _isAttacking;
-        
+
         private void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -66,11 +66,16 @@ namespace Entities.Enemies
         {
             _isAttacking = true;
             _animator.SetTrigger("Attack");
-            yield return new WaitForSeconds(_attackCooldown);
+            yield return new WaitForSeconds(_beforeAttackDuration);
+
             var newProjectile = Instantiate(_arrowPrefab, firePoint.position, Quaternion.Euler(0f, 0f, firePoint.rotation.eulerAngles.z - 90f));
             var rb = newProjectile.GetComponent<Rigidbody2D>();
             
             rb.velocity = firePoint.right * _projectileSpeed;
+
+            Destroy(newProjectile.gameObject, .5f);
+            yield return new WaitForSeconds(_attackCooldown);
+
             _isAttacking = false;
         }
     }

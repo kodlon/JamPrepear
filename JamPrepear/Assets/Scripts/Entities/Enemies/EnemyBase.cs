@@ -20,7 +20,7 @@ namespace Entities.Enemies
         public void TakeDamage(int amount)
         {
             _health -= amount;
-
+            
             if (_health <= 0)
                 Die();
         }

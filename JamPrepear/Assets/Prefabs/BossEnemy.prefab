@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b67b79b0194c2044809a7771f3a6e4c, type: 3}
+  m_Sprite: {fileID: -407667066, guid: 903bac68e53678049abbe376a524d610, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 1086497875178033668}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3a1cbb2fae0274f4a8ea6e7d3a5dc24f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e854a0a54792034cb16703ee8f38d3b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5920681282558161738}
   - component: {fileID: 9031405900779716236}
   m_Layer: 0
-  m_Name: SwordEnemy
+  m_Name: BossEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,16 +186,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b9a29ff0cf8714fbe5fada8fc23252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 1
+  _health: 3
   firePoint: {fileID: 2855013707694609262}
-  _arrowPrefab: {fileID: 8588478480394644390, guid: 842800b0188ad7b4e8e4d2e8ac144182, type: 3}
+  _arrowPrefab: {fileID: 8588478480394644390, guid: b8f975f7cb6cea943834448c4d1ffcc5, type: 3}
   _animator: {fileID: 8753904114152585049}
   _spriteRenderer: {fileID: 963708516596469847}
   _rotationSpeed: 5
   _attackRange: 2
   _projectileSpeed: 0
-  _attackCooldown: 0
-  _beforeAttackDuration: 0.5
+  _attackCooldown: 1
+  _beforeAttackDuration: 1
 --- !u!195 &6364110343589479847
 NavMeshAgent:
   m_ObjectHideFlags: 0

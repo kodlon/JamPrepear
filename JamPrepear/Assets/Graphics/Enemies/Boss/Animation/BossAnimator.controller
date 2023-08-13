@@ -53,7 +53,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwrodEnemyController
+  m_Name: BossAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
@@ -61,7 +61,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: Damaged
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -121,7 +127,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 83df42bb6a54fb4418149325ebb485c2, type: 2}
+  m_Motion: {fileID: 7400000, guid: e820f4dac49f85140a028ac0a01c3bb1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -148,7 +154,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 603097c7b23640c45b1346c91b163c09, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2e1f165f27066ab47ae6e1a6a79b2955, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

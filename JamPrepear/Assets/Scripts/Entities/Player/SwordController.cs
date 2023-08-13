@@ -9,7 +9,7 @@ namespace Entities.Player
         {
             if (other.TryGetComponent<IDamageable>(out var damageable))
             {
-                damageable.TakeDamage(10);
+                damageable.TakeDamage(1);
                 Debug.Log("Хуяк по їбалу: " + other.gameObject.name);
             }
         }

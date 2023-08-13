@@ -10,6 +10,9 @@ public class EventController : MonoBehaviour
     [SerializeField] private EnemySpawner _enemySpawner;
     [SerializeField] private DialogEvent[] _dialogEvent;
     
+    [SerializeField] private SpriteRenderer _bossThrone;
+    [SerializeField] private Sprite _emptyThroneSprite;
+    
     private SpecialEventsEnum _currentSpecialEvent;
 
     public void HandleEvent(SpecialEventsEnum specialEvent)
@@ -25,26 +28,51 @@ public class EventController : MonoBehaviour
             case SpecialEventsEnum.FirstWave:
                 _currentSpecialEvent = SpecialEventsEnum.FirstWave;
                 
-                for (var i = 0; i < 1; i++)
+                for (var i = 0; i < 2; i++)
                 {
-                    _enemySpawner.SpawnBowEnemy(_enemySpawner.transform.position, Quaternion.identity);
+                    _enemySpawner.SpawnSwordEnemy();
                 }
+                
+                _enemySpawner.SpawnBowEnemy();
+
                 break;
             case SpecialEventsEnum.SecondWave:
                 _currentSpecialEvent = SpecialEventsEnum.SecondWave;
+
+                for (var i = 0; i < 1; i++)
+                {
+                    _enemySpawner.SpawnSwordEnemy();
+                }             
                 
                 for (var i = 0; i < 2; i++)
                 {
-                    _enemySpawner.SpawnBowEnemy(_enemySpawner.transform.position, Quaternion.identity);
+                    _enemySpawner.SpawnBowEnemy();
                 }
+                
                 break;
             case SpecialEventsEnum.ThirdWave:
                 _currentSpecialEvent = SpecialEventsEnum.ThirdWave;
+
+                for (var i = 0; i < 4; i++)
+                {
+                    _enemySpawner.SpawnSwordEnemy();
+                    _enemySpawner.SpawnBowEnemy();
+                }
+                
                 break;
             case SpecialEventsEnum.BossWave:
                 _currentSpecialEvent = SpecialEventsEnum.BossWave;
-
-                Debug.LogError("WIN!!!");
+                _bossThrone.sprite = _emptyThroneSprite;
+                
+                
+                for (var i = 0; i < 2; i++)
+                {
+                    _enemySpawner.SpawnSwordEnemy();
+                    _enemySpawner.SpawnBowEnemy();
+                }
+                
+                _enemySpawner.SpawnBossEnemy();
+                
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(specialEvent), specialEvent, null);
