@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dialog_2
   m_EditorClassIdentifier: 
   characterName: "\u0413\u0435\u043D\u0435\u0440\u0430\u043B"
-  dialogText: "\u041B\u043E\u0445"
+  dialogText: "\u0426\u0435\u0439 \u043D\u0430\u0440\u043E\u0434, \u043D\u0435 \u043B\u044E\u0431\u0438\u0442\u044C
+    \u0441\u0432\u0456\u0442\u043B\u043E..."
   characterSprite: {fileID: 21300000, guid: d646f6f19e706f44f96f42356777f963, type: 3}
   specialEvent: 2

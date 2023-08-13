@@ -28,48 +28,57 @@ public class EventController : MonoBehaviour
             case SpecialEventsEnum.FirstWave:
                 _currentSpecialEvent = SpecialEventsEnum.FirstWave;
                 
-                for (var i = 0; i < 2; i++)
-                {
-                    _enemySpawner.SpawnSwordEnemy();
-                }
+                _enemySpawner.SpawnSwordEnemy();
                 
-                _enemySpawner.SpawnBowEnemy();
+                // for (var i = 0; i < 2; i++)
+                // {
+                //     _enemySpawner.SpawnSwordEnemy();
+                // }
+                
+                // _enemySpawner.SpawnBowEnemy();
 
                 break;
             case SpecialEventsEnum.SecondWave:
                 _currentSpecialEvent = SpecialEventsEnum.SecondWave;
-
-                for (var i = 0; i < 1; i++)
-                {
-                    _enemySpawner.SpawnSwordEnemy();
-                }             
                 
-                for (var i = 0; i < 2; i++)
-                {
-                    _enemySpawner.SpawnBowEnemy();
-                }
+                _enemySpawner.SpawnSwordEnemy();
+
+
+                // for (var i = 0; i < 1; i++)
+                // {
+                //     _enemySpawner.SpawnSwordEnemy();
+                // }             
+                
+                // for (var i = 0; i < 2; i++)
+                // {
+                //     _enemySpawner.SpawnBowEnemy();
+                // }
                 
                 break;
             case SpecialEventsEnum.ThirdWave:
                 _currentSpecialEvent = SpecialEventsEnum.ThirdWave;
+                
+                _enemySpawner.SpawnSwordEnemy();
 
-                for (var i = 0; i < 4; i++)
-                {
-                    _enemySpawner.SpawnSwordEnemy();
-                    _enemySpawner.SpawnBowEnemy();
-                }
+
+                // for (var i = 0; i < 4; i++)
+                // {
+                //     _enemySpawner.SpawnSwordEnemy();
+                //     _enemySpawner.SpawnBowEnemy();
+                // }
                 
                 break;
             case SpecialEventsEnum.BossWave:
                 _currentSpecialEvent = SpecialEventsEnum.BossWave;
                 _bossThrone.sprite = _emptyThroneSprite;
+                _enemySpawner.SpawnSwordEnemy();
+
                 
-                
-                for (var i = 0; i < 2; i++)
-                {
-                    _enemySpawner.SpawnSwordEnemy();
-                    _enemySpawner.SpawnBowEnemy();
-                }
+                // for (var i = 0; i < 2; i++)
+                // {
+                //     _enemySpawner.SpawnSwordEnemy();
+                //     _enemySpawner.SpawnBowEnemy();
+                // }
                 
                 _enemySpawner.SpawnBossEnemy();
                 

@@ -62,13 +62,13 @@ namespace UI.DialogSystem
 
             if (_dialogList.Count <= _dialogIndex)
             {
+                _eventController.HandleEvent(_dialogList[_dialogIndex - 1].specialEvent);
                 EndDialogAfterAction();
                 yield break;
             }
 
             _characterNameText.text = _dialogList[_dialogIndex].characterName;
             _characterSpriteRenderer.sprite = _dialogList[_dialogIndex].characterSprite;
-            _eventController.HandleEvent(_dialogList[_dialogIndex].specialEvent);
 
             var fullText = _dialogList[_dialogIndex].dialogText;
             _dialogText.text = "";
@@ -80,6 +80,9 @@ namespace UI.DialogSystem
             }
             
             _dialogButton.interactable = true;
+
+            if (_dialogList[_dialogIndex].specialEvent == SpecialEventsEnum.ReceiveWeapon)
+                _eventController.HandleEvent(_dialogList[_dialogIndex].specialEvent);
         }
 
         private void EndDialogAfterAction()

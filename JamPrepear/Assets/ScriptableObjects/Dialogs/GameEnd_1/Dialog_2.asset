@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe4a9d3cbeb4c50b04a1c60b2208be2, type: 3}
   m_Name: Dialog_2
   m_EditorClassIdentifier: 
-  characterName: "\u0412\u043E\u0457\u043D\u0438 \u043D\u0430\u0432\u043A\u043E\u043B\u043E"
-  dialogText: "\u0411\u041E\u0421! \u0411\u041E\u0421! \u0411\u041E\u0421!"
-  characterSprite: {fileID: 21300000, guid: 3aeb71829f86c9547a6f199069ccc039, type: 3}
+  characterName: "\u0412\u0430\u0440\u0442\u043E\u0432\u0438\u0439"
+  dialogText: "\u041D\u043E\u0432\u0438\u0439 \u0413\u043E\u0441\u043F\u043E\u0434\u0430\u0440!"
+  characterSprite: {fileID: 21300000, guid: b87fa94dc60b1b2429174cd8380f28cb, type: 3}
   specialEvent: 0
