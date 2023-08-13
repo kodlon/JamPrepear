@@ -8,7 +8,7 @@ namespace Entities.Enemies
     public class AlebardEnemy : EnemyBase
     {
         [SerializeField] private Transform _target;
-        [SerializeField] private SpriteRenderer _elebardPreparingSprite;
+        [SerializeField] private SpriteRenderer _alebardPreparingSprite;
         [SerializeField] private Collider2D _alebardCollider;
 
         [SerializeField] private float _rotationSpeed = 5.0f;
@@ -67,20 +67,18 @@ namespace Entities.Enemies
         {
             Debug.Log($"Preparing {name}");
 
-            _elebardPreparingSprite.enabled = true;
+            _alebardPreparingSprite.enabled = true;
 
             if (_preparationCoroutine != null)
                 StopCoroutine(_preparationCoroutine);
 
-            //StartCoroutine(AlebardePreparation());
+            StartCoroutine(AlebardePreparation());
         }
-        private IEnumerable AlebardePreparation()
+        private IEnumerator AlebardePreparation()
         {
-            _alebardCollider.gameObject.SetActive(true);
-            _alebardCollider.enabled = true;
-            yield return new WaitForSeconds(_attackDuration);
-            _alebardCollider.enabled = false;
-            _alebardCollider.gameObject.SetActive(false);
+            _alebardPreparingSprite.enabled = true;
+            yield return new WaitForSeconds(_attackPreparing);
+            _alebardPreparingSprite.enabled = false;
         }
 
         private void Attack()
