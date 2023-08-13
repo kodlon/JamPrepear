@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Dialog_4
   m_EditorClassIdentifier: 
   characterName: "\u041A\u043E\u0440\u043E\u043B\u044C"
-  dialogText: "\u0422\u0418\u0428\u0418\u041D\u0410! \u0417\u0410 \u041D\u0410\u041C\u0418
-    \u0421\u041F\u041E\u0421\u0422\u0415\u0420\u0406\u0413\u0410\u042E\u0422\u042C
-    \u041D\u0415 \u041B\u0418\u0428\u0415 \u0416\u0418\u0412\u0406!"
+  dialogText: "\u0422\u0418\u0425\u041E!"
   characterSprite: {fileID: 21300000, guid: 59795b1637c07f248a63936882ae865d, type: 3}
   specialEvent: 0
