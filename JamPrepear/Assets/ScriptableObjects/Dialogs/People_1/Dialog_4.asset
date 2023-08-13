@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: "\u041A\u043E\u0440\u043E\u043B\u044C"
   dialogText: "\u0422\u0418\u0425\u041E!"
-  characterSprite: {fileID: 21300000, guid: 935bb8b5e4f7d484fb27e345f3615b65, type: 3}
+  characterSprite: {fileID: 21300000, guid: 59795b1637c07f248a63936882ae865d, type: 3}
   specialEvent: 0

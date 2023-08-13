@@ -19,4 +19,5 @@ MonoBehaviour:
     \u0437\u0430 \u0441\u0442\u0456\u043D\u0430\u043C\u0438, \u0456 \u0431\u0443\u0434\u0435
     \u0441\u043F\u043E\u0441\u0442\u0435\u0440\u0456\u0433\u0430\u0442\u0438 \u0437\u0430
     \u0442\u043E\u0431\u043E\u044E..."
-  characterSprite: {fileID: 21300000, guid: 1cb2a5bc27eceb844995da0b7ae391cd, type: 3}
+  characterSprite: {fileID: 21300000, guid: f2f36a4438085da4fab4c1d249f8dc6d, type: 3}
+  specialEvent: 0

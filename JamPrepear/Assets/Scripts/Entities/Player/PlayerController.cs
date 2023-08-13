@@ -72,7 +72,11 @@ namespace Entities.Player
         {
             _isActionAllowed = isAllowed;
             _rigidbody2D.velocity = Vector2.zero;
+            _rigidbody2D.angularVelocity = 0f; 
             _rigidbody2D.rotation = _playerTransform.eulerAngles.z;
+
+            _rigidbody2D.constraints = !isAllowed ? RigidbodyConstraints2D.FreezeAll :
+                RigidbodyConstraints2D.None;
         }
 
         private void Start()
@@ -81,7 +85,7 @@ namespace Entities.Player
             _mainCamera = Camera.main;
             _playerTransform = transform;
             
-            IsWeaponReceived = true;
+            // IsWeaponReceived = true;
         }
 
         private void FixedUpdate()
