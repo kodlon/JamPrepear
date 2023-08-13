@@ -5,7 +5,8 @@ namespace Entities.Enemies
 {
     public class EnemyBase : MonoBehaviour, IDamageable
     {
-        [SerializeField]private int _health = 1;
+        [SerializeField] private int _health = 1;
+        public Transform Target { get; set; }
 
         public int Health
         {

@@ -5,7 +5,6 @@ namespace Entities.Enemies
 {
     public class BowEnemy : EnemyBase
     {
-        [SerializeField] private Transform _target;
         [SerializeField] private Transform firePoint;
         [SerializeField] private ArrowController _arrowPrefab;
         
@@ -25,12 +24,12 @@ namespace Entities.Enemies
 
         private void FixedUpdate()
         {
-            if (_target == null)
+            if (Target == null)
                 return;
 
             RotateTowardsPlayer();
 
-            if (Vector3.Distance(_target.position, transform.position) <= _attackRange)
+            if (Vector3.Distance(Target.position, transform.position) <= _attackRange)
             {
                 if (Time.time >= _nextAttackTime)
                 {
@@ -42,13 +41,13 @@ namespace Entities.Enemies
             else
             {
                 _navMeshAgent.isStopped = false;
-                _navMeshAgent.SetDestination(_target.position);
+                _navMeshAgent.SetDestination(Target.position);
             }
         }
         
         private void RotateTowardsPlayer()
         {
-            Vector2 direction = _target.position - transform.position;
+            Vector2 direction = Target.position - transform.position;
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);

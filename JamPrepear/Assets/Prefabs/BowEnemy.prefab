@@ -165,13 +165,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
-  _target: {fileID: 0}
   firePoint: {fileID: 2855013707694609262}
   _arrowPrefab: {fileID: 8588478480394644390, guid: 4acc4d328358aa34496a00c9932ea40a, type: 3}
-  _rotationSpeed: 5
+  _rotationSpeed: 4
   _attackRange: 8
   projectileSpeed: 10
-  attackCooldown: 0.5
+  attackCooldown: 2
 --- !u!195 &6364110343589479847
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -182,7 +181,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

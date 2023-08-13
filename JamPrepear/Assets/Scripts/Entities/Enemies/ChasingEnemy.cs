@@ -5,7 +5,6 @@ namespace Entities.Enemies
 {
     public class ChasingEnemy : EnemyBase
     {
-        [SerializeField] private Transform _target;
         [SerializeField] private float _rotationSpeed = 5.0f;
         [SerializeField] private float _attackRange = 5.0f;
         [SerializeField] private float attackCooldown = 0.5f;
@@ -21,12 +20,12 @@ namespace Entities.Enemies
 
         private void FixedUpdate()
         {
-            if (_target == null)
+            if (Target == null)
                 return;
 
             RotateTowardsPlayer();
 
-            if (Vector3.Distance(_target.position, transform.position) <= _attackRange && Time.time >= _nextAttackTime)
+            if (Vector3.Distance(Target.position, transform.position) <= _attackRange && Time.time >= _nextAttackTime)
             {
                 Attack();
                 _nextAttackTime = Time.time + attackCooldown;
@@ -35,13 +34,13 @@ namespace Entities.Enemies
             else
             {
                 _navMeshAgent.isStopped = false;
-                _navMeshAgent.SetDestination(_target.position);
+                _navMeshAgent.SetDestination(Target.position);
             }
         }
         
         private void RotateTowardsPlayer()
         {
-            Vector2 direction = _target.position - transform.position;
+            Vector2 direction = Target.position - transform.position;
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);
