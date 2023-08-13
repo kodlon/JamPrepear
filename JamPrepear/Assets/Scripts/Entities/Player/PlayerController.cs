@@ -11,6 +11,7 @@ namespace Entities.Player
         [SerializeField] private float _movingSpeed = 5.0f;
         [SerializeField] private float _rotationSpeed = 200.0f;
         [SerializeField] private float _attackDuration = 0.1f;
+        [SerializeField] private float _beforeAttackDuration = 0.1f;
         [SerializeField] private int _healthPoints = 3;
         
         [SerializeField] private Collider2D _swordCollider;
@@ -47,8 +48,7 @@ namespace Entities.Player
             set
             {
                 _isWeaponReceived = value;
-
-                // Якщо значення true, активуємо анімацію атаки
+                
                 if (_isWeaponReceived)
                 {
                     _animator.SetBool("IsWeaponReceived", true);
@@ -80,6 +80,8 @@ namespace Entities.Player
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _mainCamera = Camera.main;
             _playerTransform = transform;
+            
+            IsWeaponReceived = true;
         }
 
         private void FixedUpdate()
@@ -131,11 +133,10 @@ namespace Entities.Player
         private IEnumerator SwordAttack()
         {
             _animator.SetTrigger("Attack");
-            _swordCollider.gameObject.SetActive(true);
+            yield return new WaitForSeconds(_beforeAttackDuration);
             _swordCollider.enabled = true;
             yield return new WaitForSeconds(_attackDuration);
             _swordCollider.enabled = false;
-            _swordCollider.gameObject.SetActive(false);
         }
     }
 }
