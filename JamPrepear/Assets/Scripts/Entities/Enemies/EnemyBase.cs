@@ -1,4 +1,5 @@
-﻿using Entities.Interfaces;
+﻿using System;
+using Entities.Interfaces;
 using UnityEngine;
 
 namespace Entities.Enemies
@@ -7,6 +8,8 @@ namespace Entities.Enemies
     {
         [SerializeField] private int _health = 1;
         public Transform Target { get; set; }
+        
+        public event Action<EnemyBase> OnDie;
 
         public int Health
         {
@@ -25,6 +28,7 @@ namespace Entities.Enemies
         private void Die()
         {
             Destroy(gameObject);
+            OnDie?.Invoke(this);
         }
     }
 }
