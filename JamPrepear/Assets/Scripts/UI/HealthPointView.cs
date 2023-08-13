@@ -9,6 +9,7 @@ namespace UI
     {
         [SerializeField] private PlayerController _playerController;
         [SerializeField] private List<RectTransform> _healthPointList;
+        [SerializeField] private RectTransform _gameOverPanel;
 
         private void Start()
         {
@@ -22,8 +23,11 @@ namespace UI
 
         private void OnHealthChanged(int health)
         {
-            if (_healthPointList.Count <= 0) 
+            if (_healthPointList.Count <= 0)
+            {
+                _gameOverPanel.gameObject.SetActive(true);
                 return;
+            }
             
             Destroy(_healthPointList[_healthPointList.Count - 1].gameObject);
             _healthPointList.RemoveAt(_healthPointList.Count - 1);

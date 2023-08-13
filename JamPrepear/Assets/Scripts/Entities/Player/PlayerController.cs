@@ -60,8 +60,12 @@ namespace Entities.Player
         {
             Health -= amount;
 
-            if (Health <= 0)
-                OnPlayerDeath?.Invoke();
+            if (Health > 0) 
+                return;
+            
+            _movingSpeed = 0;
+            _isWeaponReceived = false;
+            OnPlayerDeath?.Invoke();
         }
         
         public void SetActionAllowed(bool isAllowed)
