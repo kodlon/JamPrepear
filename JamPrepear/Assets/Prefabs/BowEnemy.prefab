@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4734884130091998177}
   - component: {fileID: 963708516596469847}
+  - component: {fileID: 8753904114152585049}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8753904114152585049
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086497875178033668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c3dc097e3b77354d87007547a6c1029, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5967040418499728046
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,10 +189,11 @@ MonoBehaviour:
   _health: 1
   firePoint: {fileID: 2855013707694609262}
   _arrowPrefab: {fileID: 8588478480394644390, guid: 4acc4d328358aa34496a00c9932ea40a, type: 3}
+  _animator: {fileID: 8753904114152585049}
   _rotationSpeed: 4
   _attackRange: 8
-  projectileSpeed: 10
-  attackCooldown: 2
+  _projectileSpeed: 10
+  _attackCooldown: 1
 --- !u!195 &6364110343589479847
 NavMeshAgent:
   m_ObjectHideFlags: 0

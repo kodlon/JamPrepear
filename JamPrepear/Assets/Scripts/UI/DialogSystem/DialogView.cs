@@ -51,7 +51,7 @@ namespace UI.DialogSystem
             if (_dialogProcessCoroutine != null)
                 StopCoroutine(_dialogProcessCoroutine);
             
-            StartCoroutine(DialogProcess());
+            _dialogProcessCoroutine = StartCoroutine(DialogProcess());
         }
 
         private IEnumerator DialogProcess()

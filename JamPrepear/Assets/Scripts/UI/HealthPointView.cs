@@ -23,14 +23,15 @@ namespace UI
 
         private void OnHealthChanged(int health)
         {
-            if (_healthPointList.Count <= 0)
-            {
-                _gameOverPanel.gameObject.SetActive(true);
+            if (_healthPointList.Count == 0)
                 return;
-            }
+            
             
             Destroy(_healthPointList[_healthPointList.Count - 1].gameObject);
             _healthPointList.RemoveAt(_healthPointList.Count - 1);
+            
+            if (_healthPointList.Count == 0)
+                _gameOverPanel.gameObject.SetActive(true);
         }
     }
 }

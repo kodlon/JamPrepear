@@ -18,7 +18,7 @@ public class EventController : MonoBehaviour
                 _playerController.IsWeaponReceived = true;
                 break;
             case SpecialEventsEnum.FirstWave:
-                for (var i = 0; i < 5; i++)
+                for (var i = 0; i < 1; i++)
                 {
                     _enemySpawner.SpawnBowEnemy(_enemySpawner.transform.position, Quaternion.identity);
                 }
